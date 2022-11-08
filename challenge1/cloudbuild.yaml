@@ -1,0 +1,8 @@
+steps:
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: 'push-filebeat-central'
+  args: ['apply', '-f', 'deploy_gke']
+  env:
+    - 'CLOUDSDK_CORE_PROJECT=magnetic-tesla-367611'
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=gke-terraform-learn'
