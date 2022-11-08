@@ -2,10 +2,10 @@ import json
 
 
 def iterate(inputObject, key):
-    objectKeys = key.split('/')
+    splitKeys = key.split('/')
     try:
-        value = inputObject[objectKeys[0]]
-        for key in objectKeys[1:]:
+        value = inputObject[splitKeys[0]]
+        for key in splitKeys[1:]:
             value = value[key]
         return value
     except Exception as err:
