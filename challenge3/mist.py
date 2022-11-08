@@ -2,7 +2,6 @@ import json
 
 
 def iterate(inputObject, key):
-    """get the key value from the json object"""
     objectKeys = key.split('/')
     try:
         value = inputObject[objectKeys[0]]
@@ -14,8 +13,7 @@ def iterate(inputObject, key):
         return None
 
 
-def validate_input_json(inputObject):
-    """validate input json object"""
+def validate_format(inputObject):
     try:
         json.loads(inputObject)
         return True
@@ -25,7 +23,7 @@ def validate_input_json(inputObject):
 
 if __name__ == '__main__':
     nestJSON = input('Enter a nested JSON object :')
-    if validate_input_json(nestJSON):
+    if validate_format(nestJSON):
         inputKEY = input('Enter the key in format x/y :')
         print("the value of key is", iterate(json.loads(nestJSON), inputKEY))
     else:
